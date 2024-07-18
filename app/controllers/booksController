@@ -93,7 +93,7 @@ const deleteBook = async (req,res)=>{
             throw new Error('No such a book')
         }
     const isDeleted = await Book.destroy({where:{id:req.params.id}});
-    if(!isDeleted){
+    if(isDeleted){
         res.sendStatus(204)  
     } else {
         res.status(500)
