@@ -1,6 +1,7 @@
 "use strict"
 
 require('dotenv').config()
+const cors = require('cors')
 const PORT = process.env.PORT
 const express = require('express')
 const app = express();
@@ -8,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 require('express-async-errors')
-const cors = require('cors')
+
 
 const sequelize = require('./app/config/db')
 const {syncBooks} = require('./app/models/booksModel')
